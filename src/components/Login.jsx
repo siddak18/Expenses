@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, {  useState } from 'react'
 import '../css/login.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
@@ -34,7 +34,7 @@ const Login = () => {
     };
     //console.log(user);
     
-    if(username.length==0||password.length==0){
+    if(username.length===0||password.length===0){
         alert("Please fill all the fields");
     }else{
       const res= await validate(user);

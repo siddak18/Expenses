@@ -1,9 +1,6 @@
 
 import './App.css';
-import Expense from './components/Expense';
 import Home from './components/Home';
-import Income from './components/Income';
-import Math from './components/Math';
 import Login from './components/Login';
 import {Routes ,Route} from 'react-router-dom'
 import Signup from './components/Signup';

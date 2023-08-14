@@ -3,7 +3,7 @@ import '../css/income.css'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import { useSelector } from 'react-redux';
-import { faLeaf, faRupee } from '@fortawesome/free-solid-svg-icons';
+import {  faRupee } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 ChartJS.register(ArcElement, Tooltip, Legend);
 const Expense = () => {

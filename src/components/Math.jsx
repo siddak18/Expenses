@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import '../css/mat.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircle, faRupeeSign, faTrash } from '@fortawesome/free-solid-svg-icons';
+import {  faRupeeSign, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
 import {nanoid} from 'nanoid'
-import { usename } from './Login';
 import { add, get ,deleteans} from '../api/apis';
 import { useLocation, useParams } from 'react-router-dom';
 
@@ -22,7 +21,6 @@ const Math = () => {
   const [date,setdate]=useState("");
   const dispatch=useDispatch();
   let a=useSelector(state=>state.expense);
-   let balance=0;
    useEffect(()=>{
     dispatch(get(username));
    },[]);
@@ -63,10 +61,7 @@ calculateBalance();
   //   }
   // };
   
-  const getRandomId = () => {
-    return nanoid(8);
-  };
-  
+
   // const handleSubmit = () => {
   //   const randomId = getRandomId();
   //   const info = {
@@ -126,7 +121,7 @@ calculateBalance();
       id:random,
       userid:res
     }
-    if(cat1.length==0||cat2.length==0||amount.length==0||date.length==0){
+    if(cat1.length===0||cat2.length===0||amount.length===0||date.length===0){
       alert("Please fill all the fields");
     }else{
   // dispatch({type:"ADD",payload:info});
