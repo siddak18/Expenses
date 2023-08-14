@@ -12,16 +12,26 @@ const Expense = () => {
   const value=[];
   let hasmap={};
   let expensetotal=0;
-  a.map(item=>{
-    if(item.category==="expense"){
-      expensetotal+=parseInt(item.amount);
-      if(hasmap[item.category2]){
-        hasmap[item.category2]+=parseInt(item.amount);
-      }else{
-        hasmap[item.category2]=parseInt(item.amount);
-      }
+  // a.map(item=>{
+  //   if(item.category==="expense"){
+  //     expensetotal+=parseInt(item.amount);
+  //     if(hasmap[item.category2]){
+  //       hasmap[item.category2]+=parseInt(item.amount);
+  //     }else{
+  //       hasmap[item.category2]=parseInt(item.amount);
+  //     }
+  //   }
+  // });
+  a.forEach(item => {
+    if (item.category === "expense") {
+        expensetotal += parseInt(item.amount);
+        if (hasmap[item.category2]) {
+            hasmap[item.category2] += parseInt(item.amount);
+        } else {
+            hasmap[item.category2] = parseInt(item.amount);
+        }
     }
-  });
+});
   for(let key in hasmap){
     type.push(key);
     value.push(hasmap[key]);
@@ -50,7 +60,7 @@ const Expense = () => {
           ]
         }]
     }
-    const color=['red','darkred','lightred','black','blue'];
+ //   const color=['red','darkred','lightred','black','blue'];
     const options = {
         plugins: {
             legend: {

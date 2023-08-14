@@ -23,10 +23,8 @@ const Math = () => {
   let a=useSelector(state=>state.expense);
    useEffect(()=>{
     dispatch(get(username));
-   },[]);
-   useEffect(()=>{
-calculateBalance();
-   },[]);
+   });
+  
    const calculateBalance = () => {
     let balance = 0;
     
@@ -39,7 +37,9 @@ calculateBalance();
     });
     return balance;
   };
-  
+  useEffect(()=>{
+    calculateBalance();
+       });
   // const handleInputChange = (e) => {
   //   const { name, value } = e.target;
     

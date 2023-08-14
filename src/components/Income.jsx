@@ -3,27 +3,26 @@ import '../css/income.css'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import { useSelector } from 'react-redux';
-import { usename } from './Login';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRupeeSign } from '@fortawesome/free-solid-svg-icons';
 ChartJS.register(ArcElement, Tooltip, Legend);
 const Income = () => {
-  const name=usename;
+  // const name=usename;
   const a=useSelector(state=>state.expense);
   const type=[];
   const value=[];
   let hasmap={};
   let inc=0;
-  a.map(item=>{
-    if(item.category==="income"){
-      inc+=parseInt(item.amount);
-      if(hasmap[item.category2]){
-        hasmap[item.category2]+=parseInt(item.amount);
-      }else{
-        hasmap[item.category2]=parseInt(item.amount);
-      }
+  a.forEach(item => {
+    if (item.category === "expense") {
+        inc += parseInt(item.amount);
+        if (hasmap[item.category2]) {
+            hasmap[item.category2] += parseInt(item.amount);
+        } else {
+            hasmap[item.category2] = parseInt(item.amount);
+        }
     }
-  });
+});
 
   for(let key in hasmap){
     type.push(key);
