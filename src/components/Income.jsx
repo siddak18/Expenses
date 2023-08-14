@@ -14,7 +14,7 @@ const Income = () => {
   let hasmap={};
   let inc=0;
   a.forEach(item => {
-    if (item.category === "expense") {
+    if (item.category === "income") {
         inc += parseInt(item.amount);
         if (hasmap[item.category2]) {
             hasmap[item.category2] += parseInt(item.amount);
